@@ -3,9 +3,12 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Window/Event.hpp>
 #include <SFML/Window/VideoMode.hpp>
+#include "entidades/Jugador.h"
+
 int main(){
-    
+    //creamos una ventana los dos puntos se refieren a crear una insstancia 
     sf::RenderWindow window (sf::VideoMode(800,600),"Swat Zombies Game");
+    Jugador jugador;
     
     while (window.isOpen()) {
         sf::Event event;
@@ -15,6 +18,7 @@ int main(){
             }        
         }
         window.clear(sf::Color::Black);
+        window.draw(jugador.getSprite());
         window.display();
     
     }
